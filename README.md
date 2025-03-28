@@ -36,3 +36,14 @@ O programa está estruturado em diversas funções para modularização:
 - `void imprimeListaAdjacencia()`: Exibe a lista de adjacência do grafo.
 - `void retornarVizinhos(int vertice)`: Mostra os vízinhos de um vértice.
 - `void menu()`: Apresenta um menu interativo para manipular o grafo.
+
+## Diferenças Entre as Duas Representações:
+| **Característica**              | **Matriz de Adjacência**                              | **Lista de Adjacência**                              |
+|----------------------------------|-------------------------------------------------------|------------------------------------------------------|
+| **Espaço**                       | Ocupa `O(V^2)` de espaço, onde `V` é o número de vértices. Mais eficiente para grafos densos. | Ocupa `O(V + E)` de espaço, onde `V` é o número de vértices e `E` é o número de arestas. Mais eficiente para grafos esparsos. |
+| **Acesso a Arestas**             | Acesso direto à aresta entre dois vértices em `O(1)`. | Acesso pode ser mais demorado, pois requer iterar pela lista de adjacência (`O(V)` no pior caso). |
+| **Inserção/Remoção de Arestas**  | Mais rápida para grafos densos, já que a remoção de arestas é feita diretamente na matriz (`O(1)`). | Requer manipulação da lista de adjacência, o que pode ser mais lento, especialmente em grafos grandes (`O(V)` no pior caso). |
+| **Armazenamento de Arestas**     | Armazena as arestas em uma matriz 2D com um valor booleano para existência e o peso. | Armazena as arestas em listas associadas a cada vértice, onde cada lista contém pares de vértices de destino e pesos. |
+| **Eficiência para Grafos Densos**| Muito eficiente. O espaço e o tempo de acesso são fixos e rápidos. | Pode ser ineficiente para grafos densos, pois seria necessário percorrer muitas listas para verificar a existência de arestas. |
+| **Eficiência para Grafos Esparsos**| Ineficiente devido ao alto custo de espaço (`O(V^2)`). | Muito eficiente, pois ocupa apenas o espaço necessário para armazenar as arestas (`O(V + E)`). |
+
