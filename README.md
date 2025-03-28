@@ -15,7 +15,7 @@ Este projeto implementa um grafo utilizando tanto a matriz de adjacência quanto
 Para compilar o programa, utilize o seguinte comando no terminal:
 
 ```sh
-gcc main.c -o grafo
+gcc -o grafo main.c lista.c matriz.c
 ```
 
 ## Como Executar
